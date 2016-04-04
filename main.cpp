@@ -7,23 +7,23 @@ using namespace std;
 
 class lister
 {
-    int length;  //РєРѕР»-РІРѕ СЃС‚СЂР°РЅРёС† РјРµР¶РґСѓ СЃС‚СЂРµР»РєР°РјРё РќРђР—РђР” Рё Р’РџР•Р РЃР”
-    int currentPage; //С‚РµРєСѓС‰Р°СЏ СЃС‚СЂР°РЅРёС†Р°
-    int totalPages; //РѕР±С‰РµРµ С‡РёСЃР»Рѕ СЃС‚СЂР°РЅРёС†
-    list<int> listPages; //РјР°СЃСЃРёРІ РЅРѕРјРµСЂРѕРІ СЃС‚СЂР°РЅРёС†
+    int length;  //длина центральной части листалки
+    int currentPage; //текущая страница
+    int totalPages; //общее количество страниц
+    list<int> listPages; //лист для хранения цифр центральной части листалки
     protected:
-        void list_pages();  //РІРѕР·РІСЂР°С‰Р°РµС‚ РјР°СЃСЃРёРІ СЃС‚СЂР°РЅРёС†
-        void print_lister(); //РІРѕР·РІСЂР°С‰Р°РµС‚ С‚РµРєСЃС‚ СЃС‚СЂР°РЅРёС†С‹
+        void list_pages();  //функция для получения листа, хранящего цифры центральной части
+        void print_lister(); //функция формирования листалки
     public:
-        lister();  //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
-        lister(int length); //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ Р·Р°РґР°РЅРЅРѕР№ РґР»РёРЅРѕР№
-        ~lister() {}; //РґРµСЃС‚СЂСѓРєС‚РѕСЂ
-        void start();
-        void create_lister(); //РІРІРѕРґ РёСЃС…РѕРґРЅС‹С… РґР°РЅРЅС‹С…
+        lister();  //конструктор по умолчанию
+        lister(int length); //конструктор с заданной длиной
+        ~lister() {}; //деструктор
+        void start(); //функция запуска формирования листалки
+        void create_lister(); //функция ввода исходных данных листалки
 
 };
 
-lister::lister() //РѕРїРёСЃР°РЅРёРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+lister::lister() //конструктор по умолчанию
 {
     currentPage =0;
     totalPages =0;
@@ -32,7 +32,7 @@ lister::lister() //РѕРїРёСЃР°РЅРёРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РїРѕ СѓРјРѕР»С‡Р°РЅ
     cout<<"Object created!"<<endl;
 }
 
-lister::lister(int length1)  //РѕРїРёСЃР°РЅРёРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° СЃ Р·Р°РґР°РЅРЅРѕР№ РґР»РёРЅРѕР№
+lister::lister(int length1)  //конструктор с заданной длиной
 {
     currentPage =0;
     totalPages =0;
@@ -42,14 +42,14 @@ lister::lister(int length1)  //РѕРїРёСЃР°РЅРёРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° СЃ Р·Р°
 }
 
 
-void lister::start()
+void lister::start() //функция запуска формирования листалки
 {
     create_lister();
     list_pages();
     print_lister();
 }
 
-void lister::create_lister() //РѕРїРёСЃР°РЅРёРµ С„СѓРЅРєС†РёРё РІРІРѕРґР° РґР°РЅРЅС‹С…
+void lister::create_lister() //функция ввода исходных данных листалки
 {
     cout<<"Enter values:"<<endl;
     cout<<"Length lister - ";
@@ -61,13 +61,12 @@ void lister::create_lister() //РѕРїРёСЃР°РЅРёРµ С„СѓРЅРєС†РёРё РІРІРѕРґР° РґР°РЅ
 
 }
 
-void lister::list_pages()  //РѕРїРёСЃР°РЅРёРµ РІРѕР·РІСЂР°С‰Р°РµС‚ РјР°СЃСЃРёРІ СЃС‚СЂР°РЅРёС†
+void lister::list_pages()  //функция для получения листа, хранящего цифры центральной части
 {
     listPages.clear();
     listPages.push_back(currentPage);
     if(length % 2 == 0)
     {
-       //С‡РµС‚РЅРѕРµ
         for (int i=0; i<((length/2)-1);i++)
          {
              listPages.push_front(currentPage-i-1);
@@ -77,8 +76,6 @@ void lister::list_pages()  //РѕРїРёСЃР°РЅРёРµ РІРѕР·РІСЂР°С‰Р°РµС‚ РјР°СЃСЃРёРІ 
     }
     else
     {
-       //РЅРµ С‡РµС‚РЅРѕРµ
-
         for (int i=0; i<round(length/2);i++)
          {
              listPages.push_front(currentPage-i-1);
@@ -88,7 +85,7 @@ void lister::list_pages()  //РѕРїРёСЃР°РЅРёРµ РІРѕР·РІСЂР°С‰Р°РµС‚ РјР°СЃСЃРёРІ 
 }
 
 
-void lister::print_lister() //РІРѕР·РІСЂР°С‰Р°РµС‚ С‚РµРєСЃС‚ СЃС‚СЂР°РЅРёС†С‹
+void lister::print_lister() //функция формирования листалки
 {
     cout<<"Length: "<<this->length<<endl;
     cout<<"Total pages: "<<this->totalPages<<endl;
@@ -113,7 +110,7 @@ void lister::print_lister() //РІРѕР·РІСЂР°С‰Р°РµС‚ С‚РµРєСЃС‚ СЃС‚СЂР°РЅРёС†С‹
 
 int main()
 {
-    lister Lister1; //СЃРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР°
+    lister Lister1;
     Lister1.start();
     return 0;
 }
