@@ -1,6 +1,8 @@
 #include <conio.h>
 #include <iostream>
 #include <math.h>
+#include <ctype.h>
+#include <stdlib.h>
 #include <list>
 
 using namespace std;
@@ -22,6 +24,33 @@ class lister
         void create_lister(); //функция ввода исходных данных листалки
 
 };
+
+
+
+bool IsValidInt(char* x){
+    bool Checked = true;
+    int i = 0;
+    do
+    {
+        //valid digit?
+        if (isdigit(x[i]))
+        {
+            //to the next character
+            i++;
+            Checked = true;
+        }
+        else
+        {
+            //to the next character
+            i++;
+            Checked = false;
+            break;
+        }
+    } while (x[i] != '\0');
+
+    return Checked;
+}
+
 
 lister::lister() //конструктор по умолчанию
 {
@@ -52,12 +81,45 @@ void lister::start() //функция запуска формирования листалки
 void lister::create_lister() //функция ввода исходных данных листалки
 {
     cout<<"Enter values:"<<endl;
-    cout<<"Length lister - ";
-    cin>>length;
-    cout<<"Total pages - ";
-    cin>>totalPages;
-    cout<<"Current page - ";
-    cin>>currentPage;
+    bool correctInput=0;
+    while (correctInput==0) {
+        char str[]="";
+        cout<<"Length lister - ";
+        cin>>str;
+        if (IsValidInt(str)){
+            length=atoi(str);
+            correctInput=1;
+        }
+        else {
+            cout<<"Incorrect input! Lenght lister should be decimal! Please, repeat correct input!"<<endl;
+        }
+    }
+    correctInput=0;
+    while (correctInput==0) {
+        char str[]="";
+        cout<<"Total pages - ";
+        cin>>str;
+        if (IsValidInt(str)){
+            totalPages=atoi(str);
+            correctInput=1;
+        }
+        else {
+            cout<<"Incorrect input! Total pages should be decimal! Please, repeat correct input!"<<endl;
+        }
+    }
+    correctInput=0;
+    while (correctInput==0) {
+        char str[]="";
+        cout<<"Current page - ";
+        cin>>str;
+        if (IsValidInt(str)){
+            currentPage=atoi(str);
+            correctInput=1;
+        }
+        else {
+            cout<<"Incorrect input! Current page should be decimal! Please, repeat correct input!"<<endl;
+        }
+    }
 
 }
 
@@ -106,6 +168,12 @@ void lister::print_lister() //функция формирования листалки
     }
     cout<< ">> " << totalPages;
 }
+
+
+
+
+
+
 
 
 int main()
