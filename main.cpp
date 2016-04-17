@@ -74,8 +74,23 @@ lister::lister(int length1)  //конструктор с заданной длиной
 void lister::start() //функция запуска формирования листалки
 {
     create_lister();
-    list_pages();
-    print_lister();
+    if ((currentPage==0) || (length==0) || (totalPages==0))
+    {
+        cout <<"Error! Incorrect values!"<<endl;
+        cout <<"0"<<endl;
+    }
+    else
+    {
+        if ((currentPage==1) || (length==1) || (totalPages==1))
+        {
+            cout <<currentPage<<endl;
+        }
+        else
+        {
+            list_pages();
+            create_lister();
+        }
+    }
 }
 
 void lister::create_lister() //функция ввода исходных данных листалки
@@ -91,7 +106,7 @@ void lister::create_lister() //функция ввода исходных данных листалки
             correctInput=1;
         }
         else {
-            cout<<"Incorrect input! Lenght lister should be decimal! Please, repeat correct input!"<<endl;
+            cout<<"Incorrect input! Length lister should be decimal! Please, repeat correct input!"<<endl;
         }
     }
     correctInput=0;
@@ -120,29 +135,100 @@ void lister::create_lister() //функция ввода исходных данных листалки
             cout<<"Incorrect input! Current page should be decimal! Please, repeat correct input!"<<endl;
         }
     }
+    if (currentPage>totalPages)
+    {
+        cout<<"Incorrect values! Current page should be smaller then total pages."<<endl;
+        create_lister();
+    }
+    if (length>totalPages)
+    {
+        cout<<"Incorrect values! Length should be smaller then total pages."<<endl;
+        create_lister();
+    }
 
 }
 
 void lister::list_pages()  //функция для получения листа, хранящего цифры центральной части
 {
-    listPages.clear();
-    listPages.push_back(currentPage);
-    if(length % 2 == 0)
+    listPages.clear();  //очищаем список выводимых страниц
+    listPages.push_back(currentPage); //добавляем текущую страницу
+    int a=0;
+    int c=0;
+    int b=0;
+    if (currentPage==totalPages) a =1;  //текущая - последняя страница
+    else {
+        if (currentPage==1)  a =2;  //текущая - первая страница
+        else {
+            if((totalPages-currentPage)<=(length/2)) a =3; //текущая страница ближе к концу
+            else {
+                if((currentPage-1)<=(length/2)) a =4;//текущая страница ближе к началу
+                else {
+                    if (length % 2 == 0)  a =5;  //четное число выводимых страниц
+                }
+            }
+        }
+    }
+
+    switch (a)
     {
+    case (1):
+        for(int i=0; i<length-1; i++)
+        {
+            listPages.push_front(currentPage-i-1);
+        }
+        break;
+    case (2):
+        for(int i=0; i<length-1; i++)
+        {
+            listPages.push_back(currentPage+i+1);
+        }
+        break;
+    case (3):
+        c=1;
+        for (int i=currentPage; i<totalPages-1;i++)
+        {
+            listPages.push_front(currentPage-c);
+            listPages.push_back(currentPage+c);
+            c++;
+        }
+        b=length-(c-1)*2+1;
+
+        for (int i=0; i<b; i++)
+        {
+            listPages.push_front(currentPage-c-i);
+        }
+        break;
+    case (4):
+        c=1;
+        for (int i=currentPage-1; i>1;i--)
+        {
+            listPages.push_front(currentPage-c);
+            listPages.push_back(currentPage+c);
+            c++;
+        }
+        b=length-(c-1)*2+1;
+        for (int i=0; i<b; i++)
+        {
+            listPages.push_back(currentPage+c+i);
+        }
+        break;
+    case (5):
         for (int i=0; i<((length/2)-1);i++)
-         {
-             listPages.push_front(currentPage-i-1);
-             listPages.push_back(currentPage+i+1);
+        {
+            listPages.push_front(currentPage-i-1);
+            listPages.push_back(currentPage+i+1);
         }
         listPages.push_back(currentPage+(length/2)+1);
-    }
-    else
-    {
+        break;
+    default:
+        //нечётное число выводимых страниц
+
         for (int i=0; i<round(length/2);i++)
-         {
-             listPages.push_front(currentPage-i-1);
-             listPages.push_back(currentPage+i+1);
-         }
+        {
+            listPages.push_front(currentPage-i-1);
+            listPages.push_back(currentPage+i+1);
+        }
+        break;
     }
 }
 
@@ -168,12 +254,6 @@ void lister::print_lister() //функция формирования листалки
     }
     cout<< ">> " << totalPages;
 }
-
-
-
-
-
-
 
 
 int main()
