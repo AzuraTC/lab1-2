@@ -1,4 +1,12 @@
-for unit tests write
+**********************
+for makefile write: (directory "makefile")
+**********************
+
+make -f Makefile
+
+**********************
+for unit tests write:
+**********************
 
 cxxtestgen --error-printer -o runner.cpp TestMain.h
 
@@ -6,3 +14,8 @@ g++ -o runner runner.cpp
 
 ./runner
 
+**********************
+code coverage in directory "res":
+**********************
+
+click index.html
