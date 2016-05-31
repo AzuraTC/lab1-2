@@ -20,7 +20,7 @@ int main( int argc, char *argv[] ) {
     return status;
 }
 bool suite_MyTest_init = false;
-#include "/home/azura/Kida/lab2/TestMain.h"
+#include "/home/azura/listalka2/listalka/TestMain.h"
 
 static MyTest suite_MyTest;
 
