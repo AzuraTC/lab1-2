@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - ex_test.info - c++/4.8/bits/allocator.h</title>
+  <title>LCOV - test.info - c++/4.8/bits/allocator.h</title>
   <link rel="stylesheet" type="text/css" href="../../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">ex_test.info</td>
+            <td class="headerValue">test.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">3</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2016-05-24</td>
+            <td class="headerValue">2016-05-31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -172,15 +172,15 @@
 <span class="lineNum">     110 </span>            :       typedef true_type propagate_on_container_move_assignment;
 <a name="111"><span class="lineNum">     111 </span>            : #endif</a>
 <span class="lineNum">     112 </span>            : 
-<span class="lineNum">     113 </span><span class="lineCov">         13 :       allocator() throw() { }</span>
+<span class="lineNum">     113 </span><span class="lineCov">         28 :       allocator() throw() { }</span>
 <span class="lineNum">     114 </span>            : 
 <span class="lineNum">     115 </span>            :       allocator(const allocator&amp; __a) throw()
 <span class="lineNum">     116 </span>            :       : __allocator_base&lt;_Tp&gt;(__a) { }
 <a name="117"><span class="lineNum">     117 </span>            : </a>
 <span class="lineNum">     118 </span>            :       template&lt;typename _Tp1&gt;
-<a name="119"><span class="lineNum">     119 </span><span class="lineCov">         60 :         allocator(const allocator&lt;_Tp1&gt;&amp;) throw() { }</span></a>
+<a name="119"><span class="lineNum">     119 </span><span class="lineCov">        144 :         allocator(const allocator&lt;_Tp1&gt;&amp;) throw() { }</span></a>
 <span class="lineNum">     120 </span>            : 
-<span class="lineNum">     121 </span><span class="lineCov">         73 :       ~allocator() throw() { }</span>
+<span class="lineNum">     121 </span><span class="lineCov">        172 :       ~allocator() throw() { }</span>
 <span class="lineNum">     122 </span>            : 
 <span class="lineNum">     123 </span>            :       // Inherit everything else.
 <span class="lineNum">     124 </span>            :     };

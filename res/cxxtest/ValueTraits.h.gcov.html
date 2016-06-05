@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - ex_test.info - cxxtest/ValueTraits.h</title>
+  <title>LCOV - test.info - cxxtest/ValueTraits.h</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">ex_test.info</td>
+            <td class="headerValue">test.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">10</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2016-05-24</td>
+            <td class="headerValue">2016-05-31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -207,7 +207,7 @@
 <span class="lineNum">     145 </span>            : CXXTEST_NON_NEGATIVE(bool)
 <a name="146"><span class="lineNum">     146 </span>            : CXXTEST_NON_NEGATIVE(unsigned char)</a>
 <a name="147"><span class="lineNum">     147 </span>            : CXXTEST_NON_NEGATIVE(unsigned short int)</a>
-<span class="lineNum">     148 </span><span class="lineCov">          1 : CXXTEST_NON_NEGATIVE(unsigned int)</span>
+<span class="lineNum">     148 </span><span class="lineCov">          2 : CXXTEST_NON_NEGATIVE(unsigned int)</span>
 <span class="lineNum">     149 </span><span class="lineNoCov">          0 : CXXTEST_NON_NEGATIVE(unsigned long int)</span>
 <span class="lineNum">     150 </span>            : #   ifdef _CXXTEST_LONGLONG
 <span class="lineNum">     151 </span>            : CXXTEST_NON_NEGATIVE(unsigned _CXXTEST_LONGLONG)
@@ -219,34 +219,34 @@
 <span class="lineNum">     157 </span>            : // Remember -- we can't use the standard library!
 <a name="158"><span class="lineNum">     158 </span>            : //</a>
 <span class="lineNum">     159 </span>            : template&lt;class N&gt;
-<span class="lineNum">     160 </span><span class="lineCov">          1 : char *numberToString(N n, char *s,</span>
+<span class="lineNum">     160 </span><span class="lineCov">          2 : char *numberToString(N n, char *s,</span>
 <span class="lineNum">     161 </span>            :                      N base = 10,
 <span class="lineNum">     162 </span>            :                      unsigned skipDigits = 0,
 <span class="lineNum">     163 </span>            :                      unsigned maxDigits = (unsigned) - 1)
 <span class="lineNum">     164 </span>            : {
-<span class="lineNum">     165 </span><span class="lineCov">          1 :     if (negative(n))</span>
+<span class="lineNum">     165 </span><span class="lineCov">          2 :     if (negative(n))</span>
 <span class="lineNum">     166 </span>            :     {
 <span class="lineNum">     167 </span><span class="lineNoCov">          0 :         *s++ = '-';</span>
 <span class="lineNum">     168 </span><span class="lineNoCov">          0 :         n = abs(n);</span>
 <span class="lineNum">     169 </span>            :     }
 <span class="lineNum">     170 </span>            : 
-<span class="lineNum">     171 </span><span class="lineCov">          1 :     N digit = 1;</span>
-<span class="lineNum">     172 </span><span class="lineCov">          2 :     while (digit &lt;= (n / base))</span>
+<span class="lineNum">     171 </span><span class="lineCov">          2 :     N digit = 1;</span>
+<span class="lineNum">     172 </span><span class="lineCov">          4 :     while (digit &lt;= (n / base))</span>
 <span class="lineNum">     173 </span>            :     {
 <span class="lineNum">     174 </span><span class="lineNoCov">          0 :         digit *= base;</span>
 <span class="lineNum">     175 </span>            :     }
 <span class="lineNum">     176 </span>            :     N digitValue;
-<span class="lineNum">     177 </span><span class="lineCov">          1 :     for (; digit &gt;= 1 &amp;&amp; skipDigits; n -= digit * digitValue, digit /= base, -- skipDigits)</span>
+<span class="lineNum">     177 </span><span class="lineCov">          2 :     for (; digit &gt;= 1 &amp;&amp; skipDigits; n -= digit * digitValue, digit /= base, -- skipDigits)</span>
 <span class="lineNum">     178 </span>            :     {
 <span class="lineNum">     179 </span><span class="lineNoCov">          0 :         digitValue = (unsigned)(n / digit);</span>
 <span class="lineNum">     180 </span>            :     }
-<span class="lineNum">     181 </span><span class="lineCov">          2 :     for (; digit &gt;= 1 &amp;&amp; maxDigits; n -= digit * digitValue, digit /= base, -- maxDigits)</span>
+<span class="lineNum">     181 </span><span class="lineCov">          4 :     for (; digit &gt;= 1 &amp;&amp; maxDigits; n -= digit * digitValue, digit /= base, -- maxDigits)</span>
 <span class="lineNum">     182 </span>            :     {
-<span class="lineNum">     183 </span><span class="lineCov">          1 :         *s++ = digitToChar((unsigned)(digitValue = (unsigned)(n / digit)));</span>
+<span class="lineNum">     183 </span><span class="lineCov">          2 :         *s++ = digitToChar((unsigned)(digitValue = (unsigned)(n / digit)));</span>
 <span class="lineNum">     184 </span>            :     }
 <span class="lineNum">     185 </span>            : 
-<span class="lineNum">     186 </span><span class="lineCov">          1 :     *s = '\0';</span>
-<span class="lineNum">     187 </span><span class="lineCov">          1 :     return s;</span>
+<span class="lineNum">     186 </span><span class="lineCov">          2 :     *s = '\0';</span>
+<span class="lineNum">     187 </span><span class="lineCov">          2 :     return s;</span>
 <span class="lineNum">     188 </span>            : }
 <span class="lineNum">     189 </span>            : 
 <span class="lineNum">     190 </span>            : //

@@ -3,6 +3,7 @@
 #include <list>
 #include <ctype.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string>
 #include <cstring>
 #include <sstream>
@@ -114,7 +115,7 @@ string listalke::start(int length1, int totalPages1, int currentPage1)
       list_pages();
       print_listalke();
     }
-    //cout<<"Result: "<<arrayPage<<endl;
+//    cout<<"Result: "<<arrayPage<<endl;
     return arrayPage;
  }
 
@@ -216,20 +217,20 @@ void listalke::list_pages()  //описание функции возврата 
         c=0;
         for (int i=0; i<totalPages-currentPage;i++)
         {
-	 if(currentPage+i+1!=totalPages)
-		{
-            	listPages.push_back(currentPage+(i+1));
-		c++;
-		}
-          listPages.push_front(currentPage-i-1);
-          c++;
+     if(currentPage+i+1!=totalPages)
+        {
+                listPages.push_back(currentPage+(i+1));
+        c++;
+        }
+ //         listPages.push_front(currentPage-i-1);
+ //         c++;
         }
                     //дописываем недостающие страницы в начало
         b=length-(c+1);
 
         for (int i=0; i<b; i++)
         {
-            listPages.push_front(currentPage-c-i-1);
+            listPages.push_front(currentPage-i-1);
         }
         break;
     case (4):
@@ -241,14 +242,14 @@ void listalke::list_pages()  //описание функции возврата 
             listPages.push_front(currentPage-i-1);
             c++;
             }
-            listPages.push_back(currentPage+i+1);
-            c++;
+ //           listPages.push_back(currentPage+i+1);
+ //           c++;
         }
                     //дописываем недостающие страницы в конец
         b=length-c-1;//потому что потом мы вычтем 1 из b
         for (int i=0; i<b; i++)
         {
-            listPages.push_back(currentPage+c+i+1);
+            listPages.push_back(currentPage+i+1);
         }
         break;
     case (5):

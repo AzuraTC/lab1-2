@@ -3,5 +3,5 @@ all:
 	export GCOV_PREFIX=”./”
 	export GCOV_PREFIX_STRIP=6
 	./runner.out
-	lcov -t "result" -o ex_test.info -c -d .
+	lcov -t "result" -o test.info -c -d .
 	genhtml -o res test.info

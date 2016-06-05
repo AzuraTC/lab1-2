@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - ex_test.info - cxxtest/LinkedList.cpp</title>
+  <title>LCOV - test.info - cxxtest/LinkedList.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">ex_test.info</td>
+            <td class="headerValue">test.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">41</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2016-05-24</td>
+            <td class="headerValue">2016-05-31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">10</td>
@@ -86,34 +86,34 @@
 <span class="lineNum">      24 </span><span class="lineNoCov">          0 :     _head = _tail = 0;</span>
 <a name="25"><span class="lineNum">      25 </span><span class="lineNoCov">          0 : }</span></a>
 <span class="lineNum">      26 </span>            : 
-<span class="lineNum">      27 </span><span class="lineCov">          7 : Link *List::head()</span>
+<span class="lineNum">      27 </span><span class="lineCov">         14 : Link *List::head()</span>
 <span class="lineNum">      28 </span>            : {
-<span class="lineNum">      29 </span><span class="lineCov">          7 :     Link *l = _head;</span>
-<span class="lineNum">      30 </span><span class="lineCov">         14 :     while (l &amp;&amp; !l-&gt;active())</span>
+<span class="lineNum">      29 </span><span class="lineCov">         14 :     Link *l = _head;</span>
+<span class="lineNum">      30 </span><span class="lineCov">         28 :     while (l &amp;&amp; !l-&gt;active())</span>
 <span class="lineNum">      31 </span>            :     {
 <span class="lineNum">      32 </span><span class="lineNoCov">          0 :         l = l-&gt;next();</span>
 <span class="lineNum">      33 </span>            :     }
-<span class="lineNum">      34 </span><span class="lineCov">          7 :     return l;</span>
+<span class="lineNum">      34 </span><span class="lineCov">         14 :     return l;</span>
 <a name="35"><span class="lineNum">      35 </span>            : }</a>
 <span class="lineNum">      36 </span>            : 
-<span class="lineNum">      37 </span><span class="lineCov">          2 : const Link *List::head() const</span>
+<span class="lineNum">      37 </span><span class="lineCov">          4 : const Link *List::head() const</span>
 <span class="lineNum">      38 </span>            : {
-<span class="lineNum">      39 </span><span class="lineCov">          2 :     Link *l = _head;</span>
-<span class="lineNum">      40 </span><span class="lineCov">          4 :     while (l &amp;&amp; !l-&gt;active())</span>
+<span class="lineNum">      39 </span><span class="lineCov">          4 :     Link *l = _head;</span>
+<span class="lineNum">      40 </span><span class="lineCov">          8 :     while (l &amp;&amp; !l-&gt;active())</span>
 <span class="lineNum">      41 </span>            :     {
 <span class="lineNum">      42 </span><span class="lineNoCov">          0 :         l = l-&gt;next();</span>
 <span class="lineNum">      43 </span>            :     }
-<span class="lineNum">      44 </span><span class="lineCov">          2 :     return l;</span>
+<span class="lineNum">      44 </span><span class="lineCov">          4 :     return l;</span>
 <a name="45"><span class="lineNum">      45 </span>            : }</a>
 <span class="lineNum">      46 </span>            : 
-<span class="lineNum">      47 </span><span class="lineCov">          3 : Link *List::tail()</span>
+<span class="lineNum">      47 </span><span class="lineCov">          6 : Link *List::tail()</span>
 <span class="lineNum">      48 </span>            : {
-<span class="lineNum">      49 </span><span class="lineCov">          3 :     Link *l = _tail;</span>
-<span class="lineNum">      50 </span><span class="lineCov">          6 :     while (l &amp;&amp; !l-&gt;active())</span>
+<span class="lineNum">      49 </span><span class="lineCov">          6 :     Link *l = _tail;</span>
+<span class="lineNum">      50 </span><span class="lineCov">         12 :     while (l &amp;&amp; !l-&gt;active())</span>
 <span class="lineNum">      51 </span>            :     {
 <span class="lineNum">      52 </span><span class="lineNoCov">          0 :         l = l-&gt;prev();</span>
 <span class="lineNum">      53 </span>            :     }
-<span class="lineNum">      54 </span><span class="lineCov">          3 :     return l;</span>
+<span class="lineNum">      54 </span><span class="lineCov">          6 :     return l;</span>
 <a name="55"><span class="lineNum">      55 </span>            : }</a>
 <span class="lineNum">      56 </span>            : 
 <span class="lineNum">      57 </span><span class="lineNoCov">          0 : const Link *List::tail() const</span>
@@ -131,14 +131,14 @@
 <span class="lineNum">      69 </span><span class="lineNoCov">          0 :     return (_head == 0);</span>
 <a name="70"><span class="lineNum">      70 </span>            : }</a>
 <span class="lineNum">      71 </span>            : 
-<span class="lineNum">      72 </span><span class="lineCov">          2 : unsigned List::size() const</span>
+<span class="lineNum">      72 </span><span class="lineCov">          4 : unsigned List::size() const</span>
 <span class="lineNum">      73 </span>            : {
-<span class="lineNum">      74 </span><span class="lineCov">          2 :     unsigned count = 0;</span>
-<span class="lineNum">      75 </span><span class="lineCov">          6 :     for (const Link *l = head(); l != 0; l = l-&gt;next())</span>
+<span class="lineNum">      74 </span><span class="lineCov">          4 :     unsigned count = 0;</span>
+<span class="lineNum">      75 </span><span class="lineCov">         12 :     for (const Link *l = head(); l != 0; l = l-&gt;next())</span>
 <span class="lineNum">      76 </span>            :     {
-<span class="lineNum">      77 </span><span class="lineCov">          4 :         ++ count;</span>
+<span class="lineNum">      77 </span><span class="lineCov">          8 :         ++ count;</span>
 <span class="lineNum">      78 </span>            :     }
-<span class="lineNum">      79 </span><span class="lineCov">          2 :     return count;</span>
+<span class="lineNum">      79 </span><span class="lineCov">          4 :     return count;</span>
 <a name="80"><span class="lineNum">      80 </span>            : }</a>
 <span class="lineNum">      81 </span>            : 
 <span class="lineNum">      82 </span><span class="lineNoCov">          0 : Link *List::nth(unsigned n)</span>
@@ -170,20 +170,20 @@
 <span class="lineNum">     108 </span>            :     }
 <a name="109"><span class="lineNum">     109 </span><span class="lineNoCov">          0 : }</span></a>
 <span class="lineNum">     110 </span>            : 
-<span class="lineNum">     111 </span><span class="lineCov">          7 : Link::Link() :</span>
+<span class="lineNum">     111 </span><span class="lineCov">         14 : Link::Link() :</span>
 <span class="lineNum">     112 </span>            :     _next(0),
 <span class="lineNum">     113 </span>            :     _prev(0),
-<span class="lineNum">     114 </span><span class="lineCov">          7 :     _active(true)</span>
+<span class="lineNum">     114 </span><span class="lineCov">         14 :     _active(true)</span>
 <span class="lineNum">     115 </span>            : {
-<a name="116"><span class="lineNum">     116 </span><span class="lineCov">          7 : }</span></a>
+<a name="116"><span class="lineNum">     116 </span><span class="lineCov">         14 : }</span></a>
 <span class="lineNum">     117 </span>            : 
-<span class="lineNum">     118 </span><span class="lineCov">          4 : Link::~Link()</span>
+<span class="lineNum">     118 </span><span class="lineCov">          8 : Link::~Link()</span>
 <span class="lineNum">     119 </span>            : {
-<a name="120"><span class="lineNum">     120 </span><span class="lineCov">          4 : }</span></a>
+<a name="120"><span class="lineNum">     120 </span><span class="lineCov">          8 : }</span></a>
 <span class="lineNum">     121 </span>            : 
-<span class="lineNum">     122 </span><span class="lineCov">          9 : bool Link::active() const</span>
+<span class="lineNum">     122 </span><span class="lineCov">         18 : bool Link::active() const</span>
 <span class="lineNum">     123 </span>            : {
-<span class="lineNum">     124 </span><span class="lineCov">          9 :     return _active;</span>
+<span class="lineNum">     124 </span><span class="lineCov">         18 :     return _active;</span>
 <a name="125"><span class="lineNum">     125 </span>            : }</a>
 <span class="lineNum">     126 </span>            : 
 <span class="lineNum">     127 </span><span class="lineNoCov">          0 : void Link::setActive(bool value)</span>
@@ -201,14 +201,14 @@
 <span class="lineNum">     139 </span><span class="lineNoCov">          0 :     return _prev;</span>
 <a name="140"><span class="lineNum">     140 </span>            : }</a>
 <span class="lineNum">     141 </span>            : 
-<span class="lineNum">     142 </span><span class="lineCov">          3 : Link * Link::next()</span>
+<span class="lineNum">     142 </span><span class="lineCov">          6 : Link * Link::next()</span>
 <span class="lineNum">     143 </span>            : {
-<span class="lineNum">     144 </span><span class="lineCov">          3 :     Link *l = _next;</span>
-<span class="lineNum">     145 </span><span class="lineCov">          6 :     while (l &amp;&amp; !l-&gt;_active)</span>
+<span class="lineNum">     144 </span><span class="lineCov">          6 :     Link *l = _next;</span>
+<span class="lineNum">     145 </span><span class="lineCov">         12 :     while (l &amp;&amp; !l-&gt;_active)</span>
 <span class="lineNum">     146 </span>            :     {
 <span class="lineNum">     147 </span><span class="lineNoCov">          0 :         l = l-&gt;_next;</span>
 <span class="lineNum">     148 </span>            :     }
-<span class="lineNum">     149 </span><span class="lineCov">          3 :     return l;</span>
+<span class="lineNum">     149 </span><span class="lineCov">          6 :     return l;</span>
 <a name="150"><span class="lineNum">     150 </span>            : }</a>
 <span class="lineNum">     151 </span>            : 
 <span class="lineNum">     152 </span><span class="lineNoCov">          0 : Link * Link::prev()</span>
@@ -221,14 +221,14 @@
 <span class="lineNum">     159 </span><span class="lineNoCov">          0 :     return l;</span>
 <a name="160"><span class="lineNum">     160 </span>            : }</a>
 <span class="lineNum">     161 </span>            : 
-<span class="lineNum">     162 </span><span class="lineCov">          6 : const Link * Link::next() const</span>
+<span class="lineNum">     162 </span><span class="lineCov">         12 : const Link * Link::next() const</span>
 <span class="lineNum">     163 </span>            : {
-<span class="lineNum">     164 </span><span class="lineCov">          6 :     Link *l = _next;</span>
-<span class="lineNum">     165 </span><span class="lineCov">         12 :     while (l &amp;&amp; !l-&gt;_active)</span>
+<span class="lineNum">     164 </span><span class="lineCov">         12 :     Link *l = _next;</span>
+<span class="lineNum">     165 </span><span class="lineCov">         24 :     while (l &amp;&amp; !l-&gt;_active)</span>
 <span class="lineNum">     166 </span>            :     {
 <span class="lineNum">     167 </span><span class="lineNoCov">          0 :         l = l-&gt;_next;</span>
 <span class="lineNum">     168 </span>            :     }
-<span class="lineNum">     169 </span><span class="lineCov">          6 :     return l;</span>
+<span class="lineNum">     169 </span><span class="lineCov">         12 :     return l;</span>
 <a name="170"><span class="lineNum">     170 </span>            : }</a>
 <span class="lineNum">     171 </span>            : 
 <span class="lineNum">     172 </span><span class="lineNoCov">          0 : const Link * Link::prev() const</span>
@@ -241,22 +241,22 @@
 <span class="lineNum">     179 </span><span class="lineNoCov">          0 :     return l;</span>
 <a name="180"><span class="lineNum">     180 </span>            : }</a>
 <span class="lineNum">     181 </span>            : 
-<span class="lineNum">     182 </span><span class="lineCov">          3 : void Link::attach(List &amp;l)</span>
+<span class="lineNum">     182 </span><span class="lineCov">          6 : void Link::attach(List &amp;l)</span>
 <span class="lineNum">     183 </span>            : {
-<span class="lineNum">     184 </span><span class="lineCov">          3 :     if (l._tail)</span>
+<span class="lineNum">     184 </span><span class="lineCov">          6 :     if (l._tail)</span>
 <span class="lineNum">     185 </span>            :     {
-<span class="lineNum">     186 </span><span class="lineCov">          1 :         l._tail-&gt;_next = this;</span>
+<span class="lineNum">     186 </span><span class="lineCov">          2 :         l._tail-&gt;_next = this;</span>
 <span class="lineNum">     187 </span>            :     }
 <span class="lineNum">     188 </span>            : 
-<span class="lineNum">     189 </span><span class="lineCov">          3 :     _prev = l._tail;</span>
-<span class="lineNum">     190 </span><span class="lineCov">          3 :     _next = 0;</span>
+<span class="lineNum">     189 </span><span class="lineCov">          6 :     _prev = l._tail;</span>
+<span class="lineNum">     190 </span><span class="lineCov">          6 :     _next = 0;</span>
 <span class="lineNum">     191 </span>            : 
-<span class="lineNum">     192 </span><span class="lineCov">          3 :     if (l._head == 0)</span>
+<span class="lineNum">     192 </span><span class="lineCov">          6 :     if (l._head == 0)</span>
 <span class="lineNum">     193 </span>            :     {
-<span class="lineNum">     194 </span><span class="lineCov">          2 :         l._head = this;</span>
+<span class="lineNum">     194 </span><span class="lineCov">          4 :         l._head = this;</span>
 <span class="lineNum">     195 </span>            :     }
-<span class="lineNum">     196 </span><span class="lineCov">          3 :     l._tail = this;</span>
-<a name="197"><span class="lineNum">     197 </span><span class="lineCov">          3 : }</span></a>
+<span class="lineNum">     196 </span><span class="lineCov">          6 :     l._tail = this;</span>
+<a name="197"><span class="lineNum">     197 </span><span class="lineCov">          6 : }</span></a>
 <span class="lineNum">     198 </span>            : 
 <span class="lineNum">     199 </span><span class="lineNoCov">          0 : void Link::detach(List &amp;l)</span>
 <span class="lineNum">     200 </span>            : {

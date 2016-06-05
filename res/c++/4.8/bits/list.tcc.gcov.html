@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - ex_test.info - c++/4.8/bits/list.tcc</title>
+  <title>LCOV - test.info - c++/4.8/bits/list.tcc</title>
   <link rel="stylesheet" type="text/css" href="../../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">ex_test.info</td>
+            <td class="headerValue">test.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">8</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2016-05-24</td>
+            <td class="headerValue">2016-05-31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -124,23 +124,23 @@
 <span class="lineNum">      62 </span>            : 
 <a name="63"><span class="lineNum">      63 </span>            :   template&lt;typename _Tp, typename _Alloc&gt;</a>
 <span class="lineNum">      64 </span>            :     void
-<span class="lineNum">      65 </span><span class="lineCov">         20 :     _List_base&lt;_Tp, _Alloc&gt;::</span>
+<span class="lineNum">      65 </span><span class="lineCov">         44 :     _List_base&lt;_Tp, _Alloc&gt;::</span>
 <span class="lineNum">      66 </span>            :     _M_clear()
 <span class="lineNum">      67 </span>            :     {
 <span class="lineNum">      68 </span>            :       typedef _List_node&lt;_Tp&gt;  _Node;
-<span class="lineNum">      69 </span><span class="lineCov">         20 :       _Node* __cur = static_cast&lt;_Node*&gt;(_M_impl._M_node._M_next);</span>
-<span class="lineNum">      70 </span><span class="lineCov">         70 :       while (__cur != &amp;_M_impl._M_node)</span>
+<span class="lineNum">      69 </span><span class="lineCov">         44 :       _Node* __cur = static_cast&lt;_Node*&gt;(_M_impl._M_node._M_next);</span>
+<span class="lineNum">      70 </span><span class="lineCov">        160 :       while (__cur != &amp;_M_impl._M_node)</span>
 <span class="lineNum">      71 </span>            :         {
-<span class="lineNum">      72 </span><span class="lineCov">         30 :           _Node* __tmp = __cur;</span>
-<span class="lineNum">      73 </span><span class="lineCov">         30 :           __cur = static_cast&lt;_Node*&gt;(__cur-&gt;_M_next);</span>
+<span class="lineNum">      72 </span><span class="lineCov">         72 :           _Node* __tmp = __cur;</span>
+<span class="lineNum">      73 </span><span class="lineCov">         72 :           __cur = static_cast&lt;_Node*&gt;(__cur-&gt;_M_next);</span>
 <span class="lineNum">      74 </span>            : #if __cplusplus &gt;= 201103L
 <span class="lineNum">      75 </span>            :           _M_get_Node_allocator().destroy(__tmp);
 <span class="lineNum">      76 </span>            : #else
-<span class="lineNum">      77 </span><span class="lineCov">         30 :           _M_get_Tp_allocator().destroy(std::__addressof(__tmp-&gt;_M_data));</span>
+<span class="lineNum">      77 </span><span class="lineCov">         72 :           _M_get_Tp_allocator().destroy(std::__addressof(__tmp-&gt;_M_data));</span>
 <span class="lineNum">      78 </span>            : #endif
-<span class="lineNum">      79 </span><span class="lineCov">         30 :           _M_put_node(__tmp);</span>
+<span class="lineNum">      79 </span><span class="lineCov">         72 :           _M_put_node(__tmp);</span>
 <span class="lineNum">      80 </span>            :         }
-<span class="lineNum">      81 </span><span class="lineCov">         20 :     }</span>
+<span class="lineNum">      81 </span><span class="lineCov">         44 :     }</span>
 <span class="lineNum">      82 </span>            : 
 <span class="lineNum">      83 </span>            : #if __cplusplus &gt;= 201103L
 <span class="lineNum">      84 </span>            :   template&lt;typename _Tp, typename _Alloc&gt;

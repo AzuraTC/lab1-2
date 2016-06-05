@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - ex_test.info - cxxtest/TestSuite.cpp</title>
+  <title>LCOV - test.info - cxxtest/TestSuite.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">ex_test.info</td>
+            <td class="headerValue">test.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">7</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2016-05-24</td>
+            <td class="headerValue">2016-05-31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -85,8 +85,8 @@
 <a name="23"><span class="lineNum">      23 </span>            : // TestSuite members</a>
 <a name="24"><span class="lineNum">      24 </span>            : //</a>
 <a name="25"><span class="lineNum">      25 </span><span class="lineNoCov">          0 : TestSuite::~TestSuite() {}</span></a>
-<span class="lineNum">      26 </span><span class="lineCov">          2 : void TestSuite::setUp() {}</span>
-<span class="lineNum">      27 </span><span class="lineCov">          2 : void TestSuite::tearDown() {}</span>
+<span class="lineNum">      26 </span><span class="lineCov">          4 : void TestSuite::setUp() {}</span>
+<span class="lineNum">      27 </span><span class="lineCov">          4 : void TestSuite::tearDown() {}</span>
 <span class="lineNum">      28 </span>            : 
 <span class="lineNum">      29 </span>            : //
 <span class="lineNum">      30 </span>            : // Test-aborting stuff
@@ -118,15 +118,15 @@
 <span class="lineNum">      56 </span>            : //
 <a name="57"><span class="lineNum">      57 </span>            : static unsigned currentMaxDumpSize = CXXTEST_MAX_DUMP_SIZE;</a>
 <span class="lineNum">      58 </span>            : 
-<span class="lineNum">      59 </span><span class="lineCov">          4 : unsigned maxDumpSize()</span>
+<span class="lineNum">      59 </span><span class="lineCov">          8 : unsigned maxDumpSize()</span>
 <span class="lineNum">      60 </span>            : {
-<span class="lineNum">      61 </span><span class="lineCov">          4 :     return currentMaxDumpSize;</span>
+<span class="lineNum">      61 </span><span class="lineCov">          8 :     return currentMaxDumpSize;</span>
 <a name="62"><span class="lineNum">      62 </span>            : }</a>
 <span class="lineNum">      63 </span>            : 
-<span class="lineNum">      64 </span><span class="lineCov">          5 : void setMaxDumpSize(unsigned value)</span>
+<span class="lineNum">      64 </span><span class="lineCov">         10 : void setMaxDumpSize(unsigned value)</span>
 <span class="lineNum">      65 </span>            : {
-<span class="lineNum">      66 </span><span class="lineCov">          5 :     currentMaxDumpSize = value;</span>
-<span class="lineNum">      67 </span><span class="lineCov">          5 : }</span>
+<span class="lineNum">      66 </span><span class="lineCov">         10 :     currentMaxDumpSize = value;</span>
+<span class="lineNum">      67 </span><span class="lineCov">         10 : }</span>
 <span class="lineNum">      68 </span>            : 
 <span class="lineNum">      69 </span>            : //
 <a name="70"><span class="lineNum">      70 </span>            : // Some non-template functions</a>

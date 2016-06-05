@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - ex_test.info - cxxtest/TestSuite.h</title>
+  <title>LCOV - test.info - cxxtest/TestSuite.h</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">ex_test.info</td>
+            <td class="headerValue">test.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">6</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2016-05-24</td>
+            <td class="headerValue">2016-05-31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -94,7 +94,7 @@
 <span class="lineNum">      32 </span>            : 
 <a name="33"><span class="lineNum">      33 </span>            : namespace CxxTest</a>
 <span class="lineNum">      34 </span>            : {
-<span class="lineNum">      35 </span><span class="lineCov">          1 : class TestSuite</span>
+<span class="lineNum">      35 </span><span class="lineCov">          2 : class TestSuite</span>
 <span class="lineNum">      36 </span>            : {
 <span class="lineNum">      37 </span>            : public:
 <span class="lineNum">      38 </span>            :     virtual ~TestSuite();
@@ -122,9 +122,9 @@
 <span class="lineNum">      60 </span>            : template&lt;class X, class Y&gt;
 <a name="61"><span class="lineNum">      61 </span>            : struct equals</a>
 <span class="lineNum">      62 </span>            : {
-<span class="lineNum">      63 </span><span class="lineCov">         13 :     static bool test(X x, Y y)</span>
+<span class="lineNum">      63 </span><span class="lineCov">         28 :     static bool test(X x, Y y)</span>
 <span class="lineNum">      64 </span>            :     {
-<span class="lineNum">      65 </span><span class="lineCov">         13 :         return (x == y);</span>
+<span class="lineNum">      65 </span><span class="lineCov">         28 :         return (x == y);</span>
 <span class="lineNum">      66 </span>            :     }
 <span class="lineNum">      67 </span>            : };
 <span class="lineNum">      68 </span>            : 
@@ -193,12 +193,12 @@
 <span class="lineNum">     131 </span>            : };
 <a name="132"><span class="lineNum">     132 </span>            : </a>
 <span class="lineNum">     133 </span>            : template&lt;class X, class Y&gt;
-<span class="lineNum">     134 </span><span class="lineCov">         13 : void doAssertEquals(const char *file, int line,</span>
+<span class="lineNum">     134 </span><span class="lineCov">         28 : void doAssertEquals(const char *file, int line,</span>
 <span class="lineNum">     135 </span>            :                     const char *xExpr, X x,
 <span class="lineNum">     136 </span>            :                     const char *yExpr, Y y,
 <span class="lineNum">     137 </span>            :                     const char *message)
 <span class="lineNum">     138 </span>            : {
-<span class="lineNum">     139 </span><span class="lineCov">         13 :     if (!equals&lt;X, Y&gt;::test(x, y))</span>
+<span class="lineNum">     139 </span><span class="lineCov">         28 :     if (!equals&lt;X, Y&gt;::test(x, y))</span>
 <span class="lineNum">     140 </span>            :     {
 <span class="lineNum">     141 </span><span class="lineNoCov">          0 :         if (message)</span>
 <span class="lineNum">     142 </span>            :         {
@@ -207,7 +207,7 @@
 <span class="lineNum">     145 </span><span class="lineNoCov">          0 :         tracker().failedAssertEquals(file, line, xExpr, yExpr, TS_AS_STRING(x), TS_AS_STRING(y));</span>
 <span class="lineNum">     146 </span><span class="lineNoCov">          0 :         TS_ABORT();</span>
 <span class="lineNum">     147 </span>            :     }
-<span class="lineNum">     148 </span><span class="lineCov">         13 : }</span>
+<span class="lineNum">     148 </span><span class="lineCov">         28 : }</span>
 <span class="lineNum">     149 </span>            : 
 <span class="lineNum">     150 </span>            : bool sameData(const void *x, const void *y, unsigned size);
 <span class="lineNum">     151 </span>            : 

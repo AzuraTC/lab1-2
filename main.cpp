@@ -12,7 +12,7 @@ int main()
 {
 
     listalke Listalke1;
-    Listalke1.start(0,0,0);
+    Listalke1.start(5,10,2);
     return 0;
 }
 

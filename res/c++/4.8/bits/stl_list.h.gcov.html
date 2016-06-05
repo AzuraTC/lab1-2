@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - ex_test.info - c++/4.8/bits/stl_list.h</title>
+  <title>LCOV - test.info - c++/4.8/bits/stl_list.h</title>
   <link rel="stylesheet" type="text/css" href="../../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">ex_test.info</td>
+            <td class="headerValue">test.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">53</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2016-05-24</td>
+            <td class="headerValue">2016-05-31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">22</td>
@@ -199,23 +199,23 @@
 <span class="lineNum">     137 </span>            :       : _M_node() { }
 <a name="138"><span class="lineNum">     138 </span>            : </a>
 <span class="lineNum">     139 </span>            :       explicit
-<span class="lineNum">     140 </span><span class="lineCov">         61 :       _List_iterator(__detail::_List_node_base* __x)</span>
-<span class="lineNum">     141 </span><span class="lineCov">         61 :       : _M_node(__x) { }</span>
+<span class="lineNum">     140 </span><span class="lineCov">        148 :       _List_iterator(__detail::_List_node_base* __x)</span>
+<span class="lineNum">     141 </span><span class="lineCov">        148 :       : _M_node(__x) { }</span>
 <span class="lineNum">     142 </span>            : 
 <a name="143"><span class="lineNum">     143 </span>            :       // Must downcast from _List_node_base to _List_node to get to _M_data.</a>
 <span class="lineNum">     144 </span>            :       reference
-<span class="lineNum">     145 </span><span class="lineCov">         34 :       operator*() const</span>
-<span class="lineNum">     146 </span><span class="lineCov">         34 :       { return static_cast&lt;_Node*&gt;(_M_node)-&gt;_M_data; }</span>
+<span class="lineNum">     145 </span><span class="lineCov">         88 :       operator*() const</span>
+<span class="lineNum">     146 </span><span class="lineCov">         88 :       { return static_cast&lt;_Node*&gt;(_M_node)-&gt;_M_data; }</span>
 <span class="lineNum">     147 </span>            : 
 <span class="lineNum">     148 </span>            :       pointer
 <span class="lineNum">     149 </span>            :       operator-&gt;() const
 <span class="lineNum">     150 </span>            :       { return std::__addressof(static_cast&lt;_Node*&gt;(_M_node)-&gt;_M_data); }
 <a name="151"><span class="lineNum">     151 </span>            : </a>
 <span class="lineNum">     152 </span>            :       _Self&amp;
-<span class="lineNum">     153 </span><span class="lineCov">         17 :       operator++()</span>
+<span class="lineNum">     153 </span><span class="lineCov">         44 :       operator++()</span>
 <span class="lineNum">     154 </span>            :       {
-<span class="lineNum">     155 </span><span class="lineCov">         17 :         _M_node = _M_node-&gt;_M_next;</span>
-<span class="lineNum">     156 </span><span class="lineCov">         17 :         return *this;</span>
+<span class="lineNum">     155 </span><span class="lineCov">         44 :         _M_node = _M_node-&gt;_M_next;</span>
+<span class="lineNum">     156 </span><span class="lineCov">         44 :         return *this;</span>
 <span class="lineNum">     157 </span>            :       }
 <span class="lineNum">     158 </span>            : 
 <span class="lineNum">     159 </span>            :       _Self
@@ -246,8 +246,8 @@
 <span class="lineNum">     184 </span>            :       { return _M_node == __x._M_node; }
 <a name="185"><span class="lineNum">     185 </span>            : </a>
 <span class="lineNum">     186 </span>            :       bool
-<span class="lineNum">     187 </span><span class="lineCov">         24 :       operator!=(const _Self&amp; __x) const</span>
-<span class="lineNum">     188 </span><span class="lineCov">         24 :       { return _M_node != __x._M_node; }</span>
+<span class="lineNum">     187 </span><span class="lineCov">         60 :       operator!=(const _Self&amp; __x) const</span>
+<span class="lineNum">     188 </span><span class="lineCov">         60 :       { return _M_node != __x._M_node; }</span>
 <span class="lineNum">     189 </span>            : 
 <span class="lineNum">     190 </span>            :       // The only member points to the %list element.
 <span class="lineNum">     191 </span>            :       __detail::_List_node_base* _M_node;
@@ -369,14 +369,14 @@
 <span class="lineNum">     307 </span>            : 
 <a name="308"><span class="lineNum">     308 </span>            :       typedef typename _Alloc::template rebind&lt;_Tp&gt;::other _Tp_alloc_type;</a>
 <span class="lineNum">     309 </span>            : 
-<span class="lineNum">     310 </span><span class="lineCov">         13 :       struct _List_impl</span>
+<span class="lineNum">     310 </span><span class="lineCov">         28 :       struct _List_impl</span>
 <span class="lineNum">     311 </span>            :       : public _Node_alloc_type
 <span class="lineNum">     312 </span>            :       {
 <a name="313"><span class="lineNum">     313 </span>            :         __detail::_List_node_base _M_node;</a>
 <span class="lineNum">     314 </span>            : 
-<span class="lineNum">     315 </span><span class="lineCov">         13 :         _List_impl()</span>
-<span class="lineNum">     316 </span><span class="lineCov">         13 :         : _Node_alloc_type(), _M_node()</span>
-<span class="lineNum">     317 </span><span class="lineCov">         13 :         { }</span>
+<span class="lineNum">     315 </span><span class="lineCov">         28 :         _List_impl()</span>
+<span class="lineNum">     316 </span><span class="lineCov">         28 :         : _Node_alloc_type(), _M_node()</span>
+<span class="lineNum">     317 </span><span class="lineCov">         28 :         { }</span>
 <span class="lineNum">     318 </span>            : 
 <span class="lineNum">     319 </span>            :         _List_impl(const _Node_alloc_type&amp; __a)
 <span class="lineNum">     320 </span>            :         : _Node_alloc_type(__a), _M_node()
@@ -392,12 +392,12 @@
 <span class="lineNum">     330 </span>            :       _List_impl _M_impl;
 <a name="331"><span class="lineNum">     331 </span>            : </a>
 <span class="lineNum">     332 </span>            :       _List_node&lt;_Tp&gt;*
-<span class="lineNum">     333 </span><span class="lineCov">         30 :       _M_get_node()</span>
-<span class="lineNum">     334 </span><span class="lineCov">         30 :       { return _M_impl._Node_alloc_type::allocate(1); }</span>
+<span class="lineNum">     333 </span><span class="lineCov">         72 :       _M_get_node()</span>
+<span class="lineNum">     334 </span><span class="lineCov">         72 :       { return _M_impl._Node_alloc_type::allocate(1); }</span>
 <a name="335"><span class="lineNum">     335 </span>            : </a>
 <span class="lineNum">     336 </span>            :       void
-<span class="lineNum">     337 </span><span class="lineCov">         30 :       _M_put_node(_List_node&lt;_Tp&gt;* __p)</span>
-<span class="lineNum">     338 </span><span class="lineCov">         30 :       { _M_impl._Node_alloc_type::deallocate(__p, 1); }</span>
+<span class="lineNum">     337 </span><span class="lineCov">         72 :       _M_put_node(_List_node&lt;_Tp&gt;* __p)</span>
+<span class="lineNum">     338 </span><span class="lineCov">         72 :       { _M_impl._Node_alloc_type::deallocate(__p, 1); }</span>
 <span class="lineNum">     339 </span>            : 
 <span class="lineNum">     340 </span>            :   public:
 <span class="lineNum">     341 </span>            :       typedef _Alloc allocator_type;
@@ -407,20 +407,20 @@
 <span class="lineNum">     345 </span>            :       { return *static_cast&lt;_Node_alloc_type*&gt;(&amp;_M_impl); }
 <a name="346"><span class="lineNum">     346 </span>            : </a>
 <span class="lineNum">     347 </span>            :       const _Node_alloc_type&amp;
-<span class="lineNum">     348 </span><span class="lineCov">         60 :       _M_get_Node_allocator() const _GLIBCXX_NOEXCEPT</span>
-<span class="lineNum">     349 </span><span class="lineCov">         60 :       { return *static_cast&lt;const _Node_alloc_type*&gt;(&amp;_M_impl); }</span>
+<span class="lineNum">     348 </span><span class="lineCov">        144 :       _M_get_Node_allocator() const _GLIBCXX_NOEXCEPT</span>
+<span class="lineNum">     349 </span><span class="lineCov">        144 :       { return *static_cast&lt;const _Node_alloc_type*&gt;(&amp;_M_impl); }</span>
 <a name="350"><span class="lineNum">     350 </span>            : </a>
 <span class="lineNum">     351 </span>            :       _Tp_alloc_type
-<span class="lineNum">     352 </span><span class="lineCov">         60 :       _M_get_Tp_allocator() const _GLIBCXX_NOEXCEPT</span>
-<span class="lineNum">     353 </span><span class="lineCov">         60 :       { return _Tp_alloc_type(_M_get_Node_allocator()); }</span>
+<span class="lineNum">     352 </span><span class="lineCov">        144 :       _M_get_Tp_allocator() const _GLIBCXX_NOEXCEPT</span>
+<span class="lineNum">     353 </span><span class="lineCov">        144 :       { return _Tp_alloc_type(_M_get_Node_allocator()); }</span>
 <span class="lineNum">     354 </span>            : 
 <span class="lineNum">     355 </span>            :       allocator_type
 <span class="lineNum">     356 </span>            :       get_allocator() const _GLIBCXX_NOEXCEPT
 <a name="357"><span class="lineNum">     357 </span>            :       { return allocator_type(_M_get_Node_allocator()); }</a>
 <span class="lineNum">     358 </span>            : 
-<span class="lineNum">     359 </span><span class="lineCov">         13 :       _List_base()</span>
-<span class="lineNum">     360 </span><span class="lineCov">         13 :       : _M_impl()</span>
-<span class="lineNum">     361 </span><span class="lineCov">         13 :       { _M_init(); }</span>
+<span class="lineNum">     359 </span><span class="lineCov">         28 :       _List_base()</span>
+<span class="lineNum">     360 </span><span class="lineCov">         28 :       : _M_impl()</span>
+<span class="lineNum">     361 </span><span class="lineCov">         28 :       { _M_init(); }</span>
 <span class="lineNum">     362 </span>            : 
 <span class="lineNum">     363 </span>            :       _List_base(const _Node_alloc_type&amp; __a)
 <span class="lineNum">     364 </span>            :       : _M_impl(__a)
@@ -436,18 +436,18 @@
 <span class="lineNum">     374 </span>            : #endif
 <a name="375"><span class="lineNum">     375 </span>            : </a>
 <span class="lineNum">     376 </span>            :       // This is what actually destroys the list.
-<span class="lineNum">     377 </span><span class="lineCov">         13 :       ~_List_base() _GLIBCXX_NOEXCEPT</span>
-<span class="lineNum">     378 </span><span class="lineCov">         13 :       { _M_clear(); }</span>
+<span class="lineNum">     377 </span><span class="lineCov">         28 :       ~_List_base() _GLIBCXX_NOEXCEPT</span>
+<span class="lineNum">     378 </span><span class="lineCov">         28 :       { _M_clear(); }</span>
 <span class="lineNum">     379 </span>            : 
 <span class="lineNum">     380 </span>            :       void
 <span class="lineNum">     381 </span>            :       _M_clear();
 <a name="382"><span class="lineNum">     382 </span>            : </a>
 <span class="lineNum">     383 </span>            :       void
-<span class="lineNum">     384 </span><span class="lineCov">         20 :       _M_init()</span>
+<span class="lineNum">     384 </span><span class="lineCov">         44 :       _M_init()</span>
 <span class="lineNum">     385 </span>            :       {
-<span class="lineNum">     386 </span><span class="lineCov">         20 :         this-&gt;_M_impl._M_node._M_next = &amp;this-&gt;_M_impl._M_node;</span>
-<span class="lineNum">     387 </span><span class="lineCov">         20 :         this-&gt;_M_impl._M_node._M_prev = &amp;this-&gt;_M_impl._M_node;</span>
-<span class="lineNum">     388 </span><span class="lineCov">         20 :       }</span>
+<span class="lineNum">     386 </span><span class="lineCov">         44 :         this-&gt;_M_impl._M_node._M_next = &amp;this-&gt;_M_impl._M_node;</span>
+<span class="lineNum">     387 </span><span class="lineCov">         44 :         this-&gt;_M_impl._M_node._M_prev = &amp;this-&gt;_M_impl._M_node;</span>
+<span class="lineNum">     388 </span><span class="lineCov">         44 :       }</span>
 <span class="lineNum">     389 </span>            :     };
 <span class="lineNum">     390 </span>            : 
 <span class="lineNum">     391 </span>            :   /**
@@ -497,7 +497,7 @@
 <span class="lineNum">     435 </span>            :    *  %empty. 
 <a name="436"><span class="lineNum">     436 </span>            :   */</a>
 <span class="lineNum">     437 </span>            :   template&lt;typename _Tp, typename _Alloc = std::allocator&lt;_Tp&gt; &gt;
-<span class="lineNum">     438 </span><span class="lineCov">         13 :     class list : protected _List_base&lt;_Tp, _Alloc&gt;</span>
+<span class="lineNum">     438 </span><span class="lineCov">         28 :     class list : protected _List_base&lt;_Tp, _Alloc&gt;</span>
 <span class="lineNum">     439 </span>            :     {
 <span class="lineNum">     440 </span>            :       // concept requirements
 <span class="lineNum">     441 </span>            :       typedef typename _Alloc::value_type                _Alloc_value_type;
@@ -541,12 +541,12 @@
 <span class="lineNum">     479 </span>            :        */
 <a name="480"><span class="lineNum">     480 </span>            : #if __cplusplus &lt; 201103L</a>
 <span class="lineNum">     481 </span>            :       _Node*
-<span class="lineNum">     482 </span><span class="lineCov">         30 :       _M_create_node(const value_type&amp; __x)</span>
+<span class="lineNum">     482 </span><span class="lineCov">         72 :       _M_create_node(const value_type&amp; __x)</span>
 <span class="lineNum">     483 </span>            :       {
-<span class="lineNum">     484 </span><span class="lineCov">         30 :         _Node* __p = this-&gt;_M_get_node();</span>
+<span class="lineNum">     484 </span><span class="lineCov">         72 :         _Node* __p = this-&gt;_M_get_node();</span>
 <span class="lineNum">     485 </span>            :         __try
 <span class="lineNum">     486 </span>            :           {
-<span class="lineNum">     487 </span><span class="lineCov">         30 :             _M_get_Tp_allocator().construct</span>
+<span class="lineNum">     487 </span><span class="lineCov">         72 :             _M_get_Tp_allocator().construct</span>
 <span class="lineNum">     488 </span>            :               (std::__addressof(__p-&gt;_M_data), __x);
 <span class="lineNum">     489 </span>            :           }
 <span class="lineNum">     490 </span>            :         __catch(...)
@@ -554,7 +554,7 @@
 <span class="lineNum">     492 </span>            :             _M_put_node(__p);
 <span class="lineNum">     493 </span>            :             __throw_exception_again;
 <span class="lineNum">     494 </span>            :           }
-<span class="lineNum">     495 </span><span class="lineCov">         30 :         return __p;</span>
+<span class="lineNum">     495 </span><span class="lineCov">         72 :         return __p;</span>
 <span class="lineNum">     496 </span>            :       }
 <span class="lineNum">     497 </span>            : #else
 <span class="lineNum">     498 </span>            :       template&lt;typename... _Args&gt;
@@ -582,8 +582,8 @@
 <span class="lineNum">     520 </span>            :       /**
 <a name="521"><span class="lineNum">     521 </span>            :        *  @brief  Default constructor creates no elements.</a>
 <span class="lineNum">     522 </span>            :        */
-<span class="lineNum">     523 </span><span class="lineCov">         13 :       list()</span>
-<span class="lineNum">     524 </span><span class="lineCov">         13 :       : _Base() { }</span>
+<span class="lineNum">     523 </span><span class="lineCov">         28 :       list()</span>
+<span class="lineNum">     524 </span><span class="lineCov">         28 :       : _Base() { }</span>
 <span class="lineNum">     525 </span>            : 
 <span class="lineNum">     526 </span>            :       /**
 <span class="lineNum">     527 </span>            :        *  @brief  Creates a %list with no elements.
@@ -817,8 +817,8 @@
 <span class="lineNum">     755 </span>            :        *  %list.  Iteration is done in ordinary element order.
 <a name="756"><span class="lineNum">     756 </span>            :        */</a>
 <span class="lineNum">     757 </span>            :       iterator
-<span class="lineNum">     758 </span><span class="lineCov">         11 :       begin() _GLIBCXX_NOEXCEPT</span>
-<span class="lineNum">     759 </span><span class="lineCov">         11 :       { return iterator(this-&gt;_M_impl._M_node._M_next); }</span>
+<span class="lineNum">     758 </span><span class="lineCov">         28 :       begin() _GLIBCXX_NOEXCEPT</span>
+<span class="lineNum">     759 </span><span class="lineCov">         28 :       { return iterator(this-&gt;_M_impl._M_node._M_next); }</span>
 <span class="lineNum">     760 </span>            : 
 <span class="lineNum">     761 </span>            :       /**
 <span class="lineNum">     762 </span>            :        *  Returns a read-only (constant) iterator that points to the
@@ -835,8 +835,8 @@
 <span class="lineNum">     773 </span>            :        *  order.
 <a name="774"><span class="lineNum">     774 </span>            :        */</a>
 <span class="lineNum">     775 </span>            :       iterator
-<span class="lineNum">     776 </span><span class="lineCov">         50 :       end() _GLIBCXX_NOEXCEPT</span>
-<span class="lineNum">     777 </span><span class="lineCov">         50 :       { return iterator(&amp;this-&gt;_M_impl._M_node); }</span>
+<span class="lineNum">     776 </span><span class="lineCov">        120 :       end() _GLIBCXX_NOEXCEPT</span>
+<span class="lineNum">     777 </span><span class="lineCov">        120 :       { return iterator(&amp;this-&gt;_M_impl._M_node); }</span>
 <span class="lineNum">     778 </span>            : 
 <span class="lineNum">     779 </span>            :       /**
 <span class="lineNum">     780 </span>            :        *  Returns a read-only (constant) iterator that points one past
@@ -1033,8 +1033,8 @@
 <span class="lineNum">     971 </span>            :        *  references.
 <a name="972"><span class="lineNum">     972 </span>            :        */</a>
 <span class="lineNum">     973 </span>            :       void
-<span class="lineNum">     974 </span><span class="lineCov">          4 :       push_front(const value_type&amp; __x)</span>
-<span class="lineNum">     975 </span><span class="lineCov">          4 :       { this-&gt;_M_insert(begin(), __x); }</span>
+<span class="lineNum">     974 </span><span class="lineCov">         12 :       push_front(const value_type&amp; __x)</span>
+<span class="lineNum">     975 </span><span class="lineCov">         12 :       { this-&gt;_M_insert(begin(), __x); }</span>
 <span class="lineNum">     976 </span>            : 
 <span class="lineNum">     977 </span>            : #if __cplusplus &gt;= 201103L
 <span class="lineNum">     978 </span>            :       void
@@ -1074,8 +1074,8 @@
 <span class="lineNum">    1012 </span>            :        *  references.
 <a name="1013"><span class="lineNum">    1013 </span>            :        */</a>
 <span class="lineNum">    1014 </span>            :       void
-<span class="lineNum">    1015 </span><span class="lineCov">         26 :       push_back(const value_type&amp; __x)</span>
-<span class="lineNum">    1016 </span><span class="lineCov">         26 :       { this-&gt;_M_insert(end(), __x); }</span>
+<span class="lineNum">    1015 </span><span class="lineCov">         60 :       push_back(const value_type&amp; __x)</span>
+<span class="lineNum">    1016 </span><span class="lineCov">         60 :       { this-&gt;_M_insert(end(), __x); }</span>
 <span class="lineNum">    1017 </span>            : 
 <span class="lineNum">    1018 </span>            : #if __cplusplus &gt;= 201103L
 <span class="lineNum">    1019 </span>            :       void
@@ -1287,11 +1287,11 @@
 <span class="lineNum">    1225 </span>            :        *  Managing the pointer is the user's responsibility.
 <a name="1226"><span class="lineNum">    1226 </span>            :        */</a>
 <span class="lineNum">    1227 </span>            :       void
-<span class="lineNum">    1228 </span><span class="lineCov">          7 :       clear() _GLIBCXX_NOEXCEPT</span>
+<span class="lineNum">    1228 </span><span class="lineCov">         16 :       clear() _GLIBCXX_NOEXCEPT</span>
 <span class="lineNum">    1229 </span>            :       {
-<span class="lineNum">    1230 </span><span class="lineCov">          7 :         _Base::_M_clear();</span>
-<span class="lineNum">    1231 </span><span class="lineCov">          7 :         _Base::_M_init();</span>
-<span class="lineNum">    1232 </span><span class="lineCov">          7 :       }</span>
+<span class="lineNum">    1230 </span><span class="lineCov">         16 :         _Base::_M_clear();</span>
+<span class="lineNum">    1231 </span><span class="lineCov">         16 :         _Base::_M_init();</span>
+<span class="lineNum">    1232 </span><span class="lineCov">         16 :       }</span>
 <span class="lineNum">    1233 </span>            : 
 <span class="lineNum">    1234 </span>            :       // [23.2.2.4] list operations
 <span class="lineNum">    1235 </span>            :       /**
@@ -1610,11 +1610,11 @@
 <span class="lineNum">    1548 </span>            :       // Inserts new element at position given and with value given.
 <a name="1549"><span class="lineNum">    1549 </span>            : #if __cplusplus &lt; 201103L</a>
 <span class="lineNum">    1550 </span>            :       void
-<span class="lineNum">    1551 </span><span class="lineCov">         30 :       _M_insert(iterator __position, const value_type&amp; __x)</span>
+<span class="lineNum">    1551 </span><span class="lineCov">         72 :       _M_insert(iterator __position, const value_type&amp; __x)</span>
 <span class="lineNum">    1552 </span>            :       {
-<span class="lineNum">    1553 </span><span class="lineCov">         30 :         _Node* __tmp = _M_create_node(__x);</span>
-<span class="lineNum">    1554 </span><span class="lineCov">         30 :         __tmp-&gt;_M_hook(__position._M_node);</span>
-<span class="lineNum">    1555 </span><span class="lineCov">         30 :       }</span>
+<span class="lineNum">    1553 </span><span class="lineCov">         72 :         _Node* __tmp = _M_create_node(__x);</span>
+<span class="lineNum">    1554 </span><span class="lineCov">         72 :         __tmp-&gt;_M_hook(__position._M_node);</span>
+<span class="lineNum">    1555 </span><span class="lineCov">         72 :       }</span>
 <span class="lineNum">    1556 </span>            : #else
 <span class="lineNum">    1557 </span>            :      template&lt;typename... _Args&gt;
 <span class="lineNum">    1558 </span>            :        void
