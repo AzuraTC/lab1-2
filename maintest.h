@@ -107,7 +107,10 @@ string listalke::start(int length1, int totalPages1, int currentPage1)
     else if (length>totalPages)
     {
 //        cout<<"Incorrect values! Length listalke large total pages."<<endl;
-        arrayPage="0";
+//        arrayPage="0";
+          length = totalPages-2;
+          list_pages();
+          print_listalke();
     }
 
     else
@@ -115,7 +118,7 @@ string listalke::start(int length1, int totalPages1, int currentPage1)
       list_pages();
       print_listalke();
     }
-//    cout<<"Result: "<<arrayPage<<endl;
+    cout<<"Result: "<<arrayPage<<endl;
     return arrayPage;
  }
 
@@ -230,7 +233,9 @@ void listalke::list_pages()  //описание функции возврата 
 
         for (int i=0; i<b; i++)
         {
+            if (currentPage-i-1!=1) {
             listPages.push_front(currentPage-i-1);
+            }
         }
         break;
     case (4):
